@@ -19,3 +19,10 @@ data class AllMonitoringResponse(
     val message: String,
     val data: List<Monitoring>
 )
+
+@Serializable
+data class MonitoringDetailResponse(
+    val status: Boolean,
+    val message: String,
+    val data: Monitoring
+)
