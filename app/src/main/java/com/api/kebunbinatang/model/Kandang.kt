@@ -9,3 +9,10 @@ data class Kandang(
     val kapasitas: Int,
     val lokasi: String
 )
+
+@Serializable
+data class AllKandangResponse(
+    val status: Boolean,
+    val message: String,
+    val data:List<Kandang>
+)
