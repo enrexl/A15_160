@@ -12,3 +12,10 @@ data class Monitoring(
     val hewan_sehat: Int,
     val status: String
 )
+
+@Serializable
+data class AllMonitoringResponse(
+    val status: Boolean,
+    val message: String,
+    val data: List<Monitoring>
+)
