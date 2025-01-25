@@ -25,7 +25,7 @@ interface KandangService {
     suspend fun getALlKandang(): AllKandangResponse
 
     @GET("/kandang/{id_kandang}")
-    suspend fun getKandang(@Path("id_kandang") id_kandang: String) : KandangDetailResponse
+    suspend fun getKandangByID(@Path("id_kandang") id_kandang: String) : KandangDetailResponse
 
     @POST("/kandang/add")
     suspend fun insertKandang(@Body kandang: Kandang)
