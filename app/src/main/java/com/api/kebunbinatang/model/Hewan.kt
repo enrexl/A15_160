@@ -10,3 +10,10 @@ data class Hewan (
     val populasi: String,
     val zona_wilayah: String
 )
+
+@Serializable
+data class AllHewanResponse(
+    val status: Boolean,
+    val message: String,
+    val data: List<Hewan>
+)
