@@ -2,6 +2,8 @@ package com.api.kebunbinatang.ui.viewmodel.petugas
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.viewModelScope
 import com.api.kebunbinatang.model.Petugas
 import com.api.kebunbinatang.repo.PetugasRepo
@@ -45,6 +47,7 @@ class HomePetugasVM (private val petugas: PetugasRepo) : ViewModel(){
             }
             catch (e: HttpException){
                 petugasUiState = HomePetugasUiState.Error
+            }
         }
     }
 }
