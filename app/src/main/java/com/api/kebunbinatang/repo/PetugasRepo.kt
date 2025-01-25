@@ -18,9 +18,9 @@ class NetworkPetugasRepository(
     private val PetugasApiService : PetugasService)
     : PetugasRepo{
 
-    override suspend fun getPetugas(): AllPetugasResponse {
+    override suspend fun getPetugas(): AllPetugasResponse =
         PetugasApiService.getAllPetugas()
-    }
+
 
     override suspend fun getPetugasByID(id_petugas: String): Petugas {
      return try {
