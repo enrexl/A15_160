@@ -10,6 +10,7 @@ import com.api.kebunbinatang.repo.PetugasRepo
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
+import android.util.Log
 
 sealed class HomePetugasUiState{
     data class Success(val petugas: List<Petugas>) : HomePetugasUiState()
@@ -25,15 +26,21 @@ class HomePetugasVM (private val petugas: PetugasRepo) : ViewModel(){
     fun getPetugas(){
         viewModelScope.launch{
             petugasUiState = HomePetugasUiState.Loading
+            Log.d("HomePetugasVM","Fetching petugas...")
 
             try {
+                val response = petugas.getPetugas()
                 petugasUiState = HomePetugasUiState.Success(petugas.getPetugas().data)
+                Log.d("INI DIA","${response.data}")
             }
             catch (e:IOException){
                 petugasUiState = HomePetugasUiState.Error
+                Log.d("ERORR SATU","IOException while fetching petugas: ${e.message}\"", e)
+
             }
             catch (e: HttpException){
                 petugasUiState = HomePetugasUiState.Error
+                Log.d("ERORR DUA","")
             }
         }
     }
