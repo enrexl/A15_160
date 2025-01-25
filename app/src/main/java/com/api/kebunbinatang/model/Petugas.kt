@@ -8,3 +8,10 @@ data class Petugas(
     val nama_petugas: String,
     val jabatan: String
 )
+
+@Serializable
+data class AllPetugasResponse(
+    val status: Boolean,
+    val message: String,
+    val data: List<Petugas>
+)
