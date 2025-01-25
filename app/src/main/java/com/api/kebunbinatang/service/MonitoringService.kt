@@ -25,7 +25,7 @@ interface MonitoringService {
     suspend fun getAllMonitoring(): AllMonitoringResponse
 
     @GET("/monitoring/{id_monitoring}")
-    suspend fun getMonitoring(@Path("id_monitoring") id_monitoring: String) : MonitoringDetailResponse
+    suspend fun getMonitoringByID(@Path("id_monitoring") id_monitoring: String) : MonitoringDetailResponse
 
     @POST("/monitoring/add")
     suspend fun insertMonitoring(@Body monitoring: Monitoring)
