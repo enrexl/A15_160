@@ -24,7 +24,9 @@ class NetworkPetugasRepository(
 
     override suspend fun getPetugasByID(id_petugas: String): Petugas {
      return try {
-        PetugasApiService.getPetugasByID(id_petugas).data
+         println("Fetching petugas with ID: $id_petugas")
+         PetugasApiService.getPetugasByID(id_petugas).data
+
     } catch (e: Exception){
         println("Error Fetch Petugas by ID: ${e.message}")
          throw e }

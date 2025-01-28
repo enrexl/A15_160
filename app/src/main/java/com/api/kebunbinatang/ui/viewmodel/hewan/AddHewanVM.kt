@@ -1,5 +1,6 @@
 package com.api.kebunbinatang.ui.viewmodel.hewan
 
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
@@ -22,8 +23,10 @@ class AddHewanVM (private val hewan: HewanRepo): ViewModel(){
         viewModelScope.launch{
             try {
                 hewan.insertHewan(uiState.insertUiEvent.toHewan())
+                Log.d("Berhasil","")
             }catch (e: Exception){
                 e.printStackTrace()
+                Log.d("GAGAL ADD HEWAN","")
             }
         }
     }

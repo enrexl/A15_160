@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun MainMenu(
     modifier: Modifier = Modifier,
-    //toPetugasClick:() -> Unit,
+    toPetugasClick:() -> Unit,
     toHewanClick:() -> Unit,
     //toKandangClick:() -> Unit,
     //toMonitoringClick:() -> Unit
@@ -28,7 +28,7 @@ fun MainMenu(
         verticalArrangement = Arrangement.Center
         ) {
         Text(text = "ZOO Kasihan", style = MaterialTheme.typography.titleLarge )
-        Button(onClick = {  },) {
+        Button(onClick = toPetugasClick,) {
             Text(text = "Petugas")
         }
         Button(onClick = toHewanClick ) {

@@ -141,7 +141,7 @@ fun OnError(retryAction: () -> Unit, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        //CircularProgressIndicator()
+        CircularProgressIndicator()
         Text(text = "loading FAILED", modifier = Modifier.padding(16.dp))
         Button(onClick = retryAction) {
             Text(text = "Rerty")
