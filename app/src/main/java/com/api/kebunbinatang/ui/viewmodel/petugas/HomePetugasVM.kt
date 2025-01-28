@@ -45,16 +45,5 @@ class HomePetugasVM (private val petugas: PetugasRepo) : ViewModel(){
         }
     }
 
-    fun deletePetugas(id_petugas: String){
-        viewModelScope.launch{
-            try {
-                petugas.deletePetugas(id_petugas)
-            } catch (e:IOException){
-                petugasUiState = HomePetugasUiState.Error
-            }
-            catch (e: HttpException){
-                petugasUiState = HomePetugasUiState.Error
-            }
-        }
-    }
+
 }
