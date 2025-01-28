@@ -24,16 +24,16 @@ interface KandangService {
     @GET("kandang/")
     suspend fun getALlKandang(): AllKandangResponse
 
-    @GET("/kandang/{id_kandang}")
+    @GET("kandang/{id_kandang}")
     suspend fun getKandangByID(@Path("id_kandang") id_kandang: String) : KandangDetailResponse
 
-    @POST("/kandang/add")
+    @POST("kandang/add")
     suspend fun insertKandang(@Body kandang: Kandang)
 
-    @PUT("/kandang/{id_kandang}")
+    @PUT("kandang/{id_kandang}")
     suspend fun updateKandang(@Path("id_kandang") id_kandang: String, @Body kandang: Kandang)
 
-    @DELETE("/kandang/{id_kandang}")
+    @DELETE("kandang/{id_kandang}")
     suspend fun deleteKandang(@Path("id_kandang")id_kandang: String):Response<Void>
 
 }

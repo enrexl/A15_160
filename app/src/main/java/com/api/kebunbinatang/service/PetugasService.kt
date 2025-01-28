@@ -21,16 +21,16 @@ interface PetugasService {
     @GET("petugas/")
     suspend fun getAllPetugas(): AllPetugasResponse
 
-    @GET("/petugas/{id_petugas}")
+    @GET("petugas/{id_petugas}")
     suspend fun getPetugasByID(@Path("id_petugas") id_petugas: String) : PetugasDetailResponse
 
-    @POST("/petugas/add")
+    @POST("petugas/add")
     suspend fun insertPetugas(@Body petugas: Petugas)
 
-    @PUT("/petugas/{id_petugas}")
+    @PUT("petugas/{id_petugas}")
     suspend fun updatePetugas(@Path("id_petugas") id_petugas: String, @Body petugas: Petugas)
 
-    @DELETE("/petugas/{id_petugas}")
+    @DELETE("petugas/{id_petugas}")
     suspend fun deletePetugas(@Path("id_petugas")id_petugas: String):Response<Void>
 
 }

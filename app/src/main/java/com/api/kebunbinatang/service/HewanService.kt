@@ -24,16 +24,17 @@ interface HewanService {
     @GET("hewan/")
     suspend fun getAllHewan(): AllHewanResponse
 
-    @GET("/hewan/{id_hewan}")
+    @GET("hewan/{id_hewan}")
     suspend fun getHewanByID(@Path("id_hewan") id_hewan: String) : HewanDetailResponse
 
-    @POST("/hewan/add")
+    @POST("hewan/add")
     suspend fun insertHewan(@Body hewan: Hewan)
 
-    @PUT("/hewan/{id_hewan}")
-    suspend fun updateHewan(@Path("id_hewan") id_hewanv: String, @Body hewan: Hewan)
+    @PUT("hewan/{id_hewan}")
+    suspend fun updateHewan(@Path("id_hewan") id_hewan: String, @Body hewan: Hewan)
 
-    @DELETE("/hewan/{id_hewanv}")
+    @DELETE("hewan/{id_hewan}")
     suspend fun deleteHewan(@Path("id_hewan")id_hewan: String):Response<Void>
+
 
 }

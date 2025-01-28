@@ -24,16 +24,16 @@ interface MonitoringService {
     @GET("monitoring/")
     suspend fun getAllMonitoring(): AllMonitoringResponse
 
-    @GET("/monitoring/{id_monitoring}")
+    @GET("monitoring/{id_monitoring}")
     suspend fun getMonitoringByID(@Path("id_monitoring") id_monitoring: String) : MonitoringDetailResponse
 
-    @POST("/monitoring/add")
+    @POST("monitoring/add")
     suspend fun insertMonitoring(@Body monitoring: Monitoring)
 
-    @PUT("/monitoring/{id_monitoring}")
+    @PUT("monitoring/{id_monitoring}")
     suspend fun updateMonitoring(@Path("id_monitoring") id_monitoring: String, @Body monitoring: Monitoring)
 
-    @DELETE("/monitoring/{id_monitoring}")
+    @DELETE("monitoring/{id_monitoring}")
     suspend fun deleteMonitoring(@Path("id_monitoring")id_monitoring: String):Response<Void>
 
 }
